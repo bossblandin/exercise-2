@@ -195,7 +195,7 @@ function toggleInformation(memberId) {
     const imageContainer = memberContainer.querySelector(".image-container");
     const memberData = <?php echo json_encode($teamMembers); ?>.find(m => m.id === memberId);
 
-    // Check if the member's info is currently visible
+    
     const isVisible = infoContainer.style.display === "block";
 
     if (!isVisible) {
@@ -214,14 +214,14 @@ function toggleInformation(memberId) {
         infoContainer.style.textAlign = "left";
         infoContainer.style.marginBottom = "20px";
 
-        // Reset the sizes of all other members
+       
         const allMembers = document.querySelectorAll('.team-member');
         allMembers.forEach(member => {
             if (member !== memberContainer) {
-                member.querySelector('.image-container').style.marginBottom = "15px"; // Reset margin
-                member.querySelector('.info-container').style.display = "none"; // Hide other info containers
-                member.querySelector('h3').style.display = "block"; // Show other name headings
-                member.querySelector('.myButton').innerHTML = "Information"; // Reset button text
+                member.querySelector('.image-container').style.marginBottom = "15px"; 
+                member.querySelector('.info-container').style.display = "none"; 
+                member.querySelector('h3').style.display = "block";    
+                member.querySelector('.myButton').innerHTML = "Information";    
             }
         });
 
